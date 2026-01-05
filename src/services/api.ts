@@ -2,12 +2,6 @@ import axios from 'axios';
 import type {
   User,
   StudentProfile,
-  AcademicRecord,
-  SportsAchievement,
-  ClubActivity,
-  CulturalActivity,
-  ResearchWork,
-  InstitutionalService,
   Reward,
   BatchStats,
   ProgrammeStats,
@@ -26,7 +20,7 @@ const api = axios.create({
 
 // Auth API
 export const authAPI = {
-  login: async (email: string, password: string): Promise<{ user: User; token: string }> => {
+  login: async (email: string, _password: string): Promise<{ user: User; token: string }> => {
     // Dummy implementation
     const mockUsers: User[] = [
       {
@@ -299,7 +293,7 @@ export const adminAPI = {
     };
   },
 
-  getGroupStats: async (groupId: string): Promise<StudentProfile[]> => {
+  getGroupStats: async (_groupId: string): Promise<StudentProfile[]> => {
     // Dummy data - return multiple student profiles
     const profiles: StudentProfile[] = [];
     for (let i = 1; i <= 5; i++) {
